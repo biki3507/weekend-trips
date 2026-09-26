@@ -188,9 +188,17 @@ details.prefs summary:focus-visible{outline:2px solid var(--accent);outline-offs
   .alt{grid-template-columns:1fr 1fr}
 }
 @media (prefers-reduced-motion:no-preference){.pick,.cell,.seg button{transition:background .15s,border-color .15s}}
+
+/* 兩頁互相切換 */
+.pagenav{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;justify-self:start;max-width:100%;overflow-x:auto}
+.pagenav a{color:var(--muted);text-decoration:none;font-size:14px;padding:6px 14px;border-radius:999px;white-space:nowrap;min-height:36px;display:inline-flex;align-items:center}
+.pagenav a[aria-current="page"]{background:var(--accent);color:var(--accent-ink);font-weight:500}
+.pagenav a:not([aria-current]):hover{color:var(--ink)}
+.pagenav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 
 <div class="wrap">
+  <nav class="pagenav" aria-label="切換頁面"><a href="./" aria-current="page">連假去哪最省</a><a href="range.html">自選日期</a></nav>
   <header>
     <div class="eyebrow" id="meta"></div>
     <h1>這次放假，<span class="code" id="origin-code">TPE</span> 出發去哪最省</h1>
